@@ -29,8 +29,8 @@ do
 
 	elif [ $heads -eq $tails ]
 	then
-	echo "======Tie===="
- 	break
+	echo "======Tie= then continue==="
+ 	continue
 	fi
 done
 echo "wins of toss by heads call " $heads
