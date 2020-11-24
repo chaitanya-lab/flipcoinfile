@@ -1,19 +1,20 @@
-Coin=$((1+$RANDOM%2))
-read -p "enter the choice 1.for head call 2.for tail call" n
-case $n in
+#!/bin/bash -x
+heads=0
+tails=0
+read n
+while [[ $n -ne 0 ]]
+do
+        toss=$(($RANDOM%2))
+        if [ $toss -eq 1 ]
+        then
+        heads=$(($heads+1))
+        else
+        tails=$(($tails+1))
+        fi
+        n=$(($n-1))
+done
+echo "wins of toss by heads call " $heads
+echo "wins of toss by tails call" $tails
 
-	$n)	if [ $Coin -eq $n ]
-		then
-		echo "Toss Won: head"
-		fi
-		;;
 
-	$n)	if [ $Coin -eq $n ]
-		then
-		echo "Toss won: tail"
-		fi
-		;;
-	*)
-		echo "you are lost"
-		;;
-esac
+
